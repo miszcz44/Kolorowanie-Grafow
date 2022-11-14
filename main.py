@@ -15,7 +15,7 @@ def KolorujZachlannie(macierz):
 		tab[i] = k
 	return tab
 
-plik = open("algor.txt", "r")
+plik = open("pumpum.txt", "r")
 
 liczbaKrawędzi = int(plik.readline())
 
@@ -24,9 +24,9 @@ macierz = [[ 0 for i in range(liczbaKrawędzi) ] for j in range(liczbaKrawędzi)
 for liniaPliku in plik:
 	sąsiadująceKrawędzie = liniaPliku.split(" ")
 	sąsiadująceKrawędzie[1] = sąsiadująceKrawędzie[1][:len(sąsiadująceKrawędzie[1]) - 1]
-	# print(sąsiadująceKrawędzie)
+	#print(sąsiadująceKrawędzie)
 	macierz[int(sąsiadująceKrawędzie[0])-1][int(sąsiadująceKrawędzie[1])-1] = 1
-	macierz[int(sąsiadująceKrawędzie[1])-1][int(sąsiadująceKrawędzie[0])-1] = 1
+	# macierz[int(sąsiadująceKrawędzie[1])-1][int(sąsiadująceKrawędzie[0])-1] = 1
 
 tab = KolorujZachlannie(macierz)
 print("Węzeł\tKolor")
